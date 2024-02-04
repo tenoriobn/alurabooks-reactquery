@@ -50,31 +50,13 @@ const BarraNavegacao = () => {
             <li>
                 <a href="#!">Categorias</a>
                 <ul className="submenu">
-                    <li>
-                        <Link to="/">
-                            Frontend
-                        </Link>
-                    </li>
-                    <li>
-                        <Link to="/">
-                            Programação
-                        </Link>
-                    </li>
-                    <li>
-                        <Link to="/">
-                            Infraestrutura
-                        </Link>
-                    </li>
-                    <li>
-                        <Link to="/">
-                            Business
-                        </Link>
-                    </li>
-                    <li>
-                        <Link to="/">
-                            Design e UX
-                        </Link>
-                    </li>
+                    {categorias.map(categoria => (
+                        <li key={categoria.id}>
+                            <Link to={`/categorias/${categoria.slug}`}>
+                                {categoria.nome}
+                            </Link>
+                        </li>
+                    ))}
                 </ul>
             </li>
         </ul>
