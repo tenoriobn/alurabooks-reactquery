@@ -3,6 +3,7 @@ import TituloPrincipal from "../../componentes/TituloPrincipal";
 import { ICategoria } from "../../interfaces/ICategoria";
 import http from "../../http";
 import { useParams } from "react-router-dom";
+import Loader from "../../componentes/Loader";
 
 const Categoria = () => {
   const [categoria, setCategoria] = useState<ICategoria>();
@@ -16,13 +17,13 @@ const Categoria = () => {
       }
     }).then(resposta => {
       setCategoria(resposta.data[0])
-      console.log(resposta.data);
     })
   }, [params.slug])
 
   return (
     <section>
       <TituloPrincipal texto={categoria?.nome ?? ''} />
+      <Loader />
     </section>
   );
 }
