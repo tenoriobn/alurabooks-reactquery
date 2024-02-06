@@ -3,10 +3,9 @@ import { useEffect, useState } from "react"
 import { IPedido } from "../../interfaces/IPedido"
 import http from "../../http"
 import './Pedidos.css'
+import { formatador } from "../../utils/formatador-moeda"
 
 const Pedidos = () => {
-
-    const formatador = Intl.NumberFormat('pt-br', { style: 'currency', currency: 'BRL' });
 
     const [pedidos, setPedidos] = useState<IPedido[]>([])
 
