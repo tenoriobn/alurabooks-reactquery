@@ -25,7 +25,7 @@ const CardLivro = ( { livro } : CardLivroProps) => {
             </li>
             <li className="link-container">
                 <Link to={`/livro/${livro.slug}`}>
-                    <AbBotao /* isBlock */ texto="Comprar" />
+                    <AbBotao texto="Comprar" />
                 </Link>
             </li>
         </ul>
