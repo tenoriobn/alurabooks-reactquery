@@ -3,6 +3,7 @@ import { obterCategoriaPorSlug } from "../../http";
 import { useParams } from "react-router-dom";
 import Loader from "../../componentes/Loader";
 import { useQuery } from "react-query";
+import ListaLivros from "../../componentes/ListaLivros";
 
 const Categoria = () => {
   const params = useParams();
@@ -15,6 +16,7 @@ const Categoria = () => {
   return (
     <section>
       <TituloPrincipal texto={categoria?.nome ?? ''} />
+      <ListaLivros categoria={categoria!} />
     </section>
   );
 }
